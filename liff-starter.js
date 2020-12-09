@@ -10,17 +10,26 @@ function initializeLiff(myLiffId) {
     })
     .then(() => {
       // start to use LIFF's api
-      getProfile();
+      initializeApp()
     })
     .catch((err) => {
 
     });
 }
 
+function initializeApp() {
+  getProfile()
+
+  if (liff.isLoggedIn()) {
+    document.getElementById('login-btn').disabled = true;
+  } else {
+    document.getElementById('logout-btn').disabled = true;
+  }
+}
+
 function getProfile() {
   liff.getProfile()
     .then(profile => {
-      const name = profile.displayName
       document.getElementById('nama').textContent = profile.displayName
     })
     .catch((err) => {
