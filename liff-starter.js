@@ -21,13 +21,10 @@ function getProfile() {
   liff.getProfile()
     .then(profile => {
       const name = profile.displayName
-      displayName(name)
+      document.getElementById('nama').textContent = name
     })
     .catch((err) => {
       console.log('error', err);
     })
 }
 
-function displayName(name) {
-  document.getElementById('nama').innerText = name
-}
