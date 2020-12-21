@@ -99,7 +99,7 @@ btnPesan.addEventListener('click', function () {
     }]).then(function () {
       window.alert('cie dah mesen')
     }).catch(function (error) {
-      window.alert('yah gabisa')
+      window.alert('yah gabisa' + error)
     })
     localStorage.clear()
     location.reload()
