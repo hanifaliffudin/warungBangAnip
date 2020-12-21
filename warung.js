@@ -97,19 +97,10 @@ btnPesan.addEventListener('click', function () {
 `
   })
   if (!liff.isInClient()) {
-    // window.alert('Kalo mau pesen, coba buka di LINE ')
-    liff.sendMessages([
-      {
-        type: 'text',
-        text: 'Hello, World!'
-      }
-    ])
-      .then(() => {
-        console.log('message sent');
-      })
-      .catch((err) => {
-        console.log('error', err);
-      });
+    window.alert(`Pesanan anda:
+
+${teksPesanan}
+Silahkan tunjukkan pesanan ini ke abang anip`)
   } else {
     liff.sendMessages([{
       'type': 'text',
