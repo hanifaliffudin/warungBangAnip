@@ -18,7 +18,6 @@ function initializeLiff(myLiffId) {
 }
 
 function initializeApp() {
-
   if (liff.isLoggedIn()) {
     getProfile()
     document.getElementById('loginText').style.display = "none";
@@ -59,7 +58,3 @@ document.getElementById('logout-btn').addEventListener('click', function () {
     location.reload();
   }
 });
-
-function alertBukaDiBrowserEks() {
-  alert('Coba buka di LINE ')
-}

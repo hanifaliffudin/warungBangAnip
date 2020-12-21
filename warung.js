@@ -88,7 +88,7 @@ function getPesanan() {
 }
 
 
-
+//tombol pesan diklik
 btnPesan.addEventListener('click', function () {
   let cart = JSON.parse(localStorage.getItem("cart"));
   let teksPesanan = ""
@@ -97,7 +97,7 @@ btnPesan.addEventListener('click', function () {
 `
   })
   if (!liff.isInClient()) {
-    alertBukaDiBrowserEks()
+    window.alert('Kalo mau pesen, coba buka di LINE ')
   } else {
     liff.sendMessages([{
       'type': 'text',
