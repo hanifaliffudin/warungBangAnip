@@ -24,7 +24,7 @@ function initializeApp() {
     document.getElementById('loginText').style.display = "none";
     document.getElementById('login-btn').disabled = true;
   } else {
-    // document.querySelector('main').style.display = "none"
+    document.querySelector('main').style.display = "none"
     document.getElementById('logout-btn').disabled = true;
   }
 }
@@ -53,7 +53,7 @@ document.getElementById('login-btn').addEventListener('click', function () {
 document.getElementById('logout-btn').addEventListener('click', function () {
   if (liff.isLoggedIn()) {
     liff.logout();
-    window.location.reload();
+    location.reload();
   }
 });
 
