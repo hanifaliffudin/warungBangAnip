@@ -22,7 +22,7 @@ function initializeApp() {
   if (liff.isLoggedIn()) {
     getProfile()
     document.querySelector('#loginText').style.display = "none";
-    document.querySelector('#login-btn').disabled = true;
+    document.querySelector('#login-btn').style.display = "none";
   } else {
     document.querySelector('#logout-btn').style.display = "none";
     document.querySelector('#pesan').disabled = true;
@@ -32,7 +32,8 @@ function initializeApp() {
 
   //cek pake line apa eksternal
   if (liff.isInClient()) {
-
+    document.querySelector('#loginText').style.display = "none";
+    document.querySelector('#logout-btn').style.display = "none";
   } else {
     document.querySelector('#eks').style.display = "none";
   }
