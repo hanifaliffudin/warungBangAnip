@@ -18,11 +18,13 @@ function initializeLiff(myLiffId) {
 }
 
 function initializeApp() {
-  getProfile()
 
   if (liff.isLoggedIn()) {
+    getProfile()
+    document.getElementById('loginText').style.display = "none";
     document.getElementById('login-btn').disabled = true;
   } else {
+    // document.querySelector('main').style.display = "none"
     document.getElementById('logout-btn').disabled = true;
   }
 }
@@ -50,3 +52,7 @@ document.getElementById('logout-btn').addEventListener('click', function () {
     window.location.reload();
   }
 });
+
+function alertBukaDiBrowserEks() {
+  alert('Coba buka di LINE ')
+}
