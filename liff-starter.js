@@ -30,9 +30,11 @@ function initializeApp() {
 }
 
 function getProfile() {
+  let nama = ""
   liff.getProfile()
     .then(profile => {
-      document.getElementById('nama').textContent = profile.displayName
+      nama = profile.displayName
+      document.getElementById('nama').textContent = nama
     })
     .catch((err) => {
       console.log('error', err);
