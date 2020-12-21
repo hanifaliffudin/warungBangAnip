@@ -102,7 +102,7 @@ btnPesan.addEventListener('click', function () {
   } else {
     liff.sendMessages([{
       'type': 'text',
-      'text': `Hai , pesanan anda adalah sebagai berikut:
+      'text': `pesanan anda adalah sebagai berikut:
 ${teksPesanan}
 Terima Kasih`
     }]).then(function () {
@@ -110,7 +110,7 @@ Terima Kasih`
     }).catch(function (error) {
       window.alert('yah gabisa' + error)
     })
-    // localStorage.clear()
-    // location.reload()
+    localStorage.clear()
+    location.reload()
   }
 })
