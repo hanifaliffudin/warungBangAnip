@@ -18,15 +18,23 @@ function initializeLiff(myLiffId) {
 }
 
 function initializeApp() {
+  //cek login apa kagak
   if (liff.isLoggedIn()) {
     getProfile()
-    document.getElementById('loginText').style.display = "none";
-    document.getElementById('login-btn').disabled = true;
+    document.querySelector('#loginText').style.display = "none";
+    document.querySelector('#login-btn').disabled = true;
   } else {
-    document.getElementById('logout-btn').disabled = true;
-    document.getElementById('pesan').disabled = true;
-    document.getElementById('tambah').disabled = true;
+    document.querySelector('#logout-btn').style.display = "none";
+    document.querySelector('#pesan').disabled = true;
+    document.querySelector('#tambah').disabled = true;
     document.querySelector('main').style.display = "none";
+  }
+
+  //cek pake line apa eksternal
+  if (liff.isInClient()) {
+
+  } else {
+    document.querySelector('#eks').style.display = "none";
   }
 }
 
@@ -44,17 +52,25 @@ function getProfile() {
     })
 }
 
-
-document.getElementById('login-btn').addEventListener('click', function () {
+//klik tombol login
+document.querySelector('#login-btn').addEventListener('click', function () {
   if (!liff.isLoggedIn()) {
-    // set `redirectUri` to redirect the user to a URL other than the front page of your LIFF app.
     liff.login();
   }
 });
 
-document.getElementById('logout-btn').addEventListener('click', function () {
+//klik tombol logout
+document.querySelector('#logout-btn').addEventListener('click', function () {
   if (liff.isLoggedIn()) {
     liff.logout();
     location.reload();
   }
 });
+
+//klik tombol eksternal
+document.querySelector('#eks').addEventListener('click', function () {
+  liff.openWindow({
+    url: 'https://warungbanganip.herokuapp.com/',
+    external: true
+  })
+})
