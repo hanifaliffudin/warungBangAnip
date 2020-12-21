@@ -118,9 +118,9 @@ Silahkan tunjukkan pesanan ini ke abang anip`)
   else {
     liff.sendMessages([{
       'type': 'text',
-      'text': `Hai ${namaPengguna},
+      'text': `Wei ${namaPengguna},
 
-Makasih dah mesen, nih daftar pesenannya:
+Makasih dah mesen, nih daftar pesenannye:
 
 ${teksPesanan}
 Pesanannya lagi dibuat. Sabar ye. Ntar kalo dah jadi dipanggil kok sans.`
