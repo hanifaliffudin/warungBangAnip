@@ -111,7 +111,7 @@ Terima Kasih`
     }).catch(function (error) {
       window.alert('yah gabisa' + error)
     })
-    // localStorage.clear()
-    // location.reload()
+    localStorage.clear()
+    location.reload()
   }
 })
