@@ -32,6 +32,15 @@ function ubahHarga() {
     case "Nasi Uduk":
       harga.value = 10000
       break;
+    case "Teh Tarik":
+      harga.value = 6000
+      break;
+    case "Kopi Item":
+      harga.value = 4000
+      break;
+    case "STMJ":
+      harga.value = 6500
+      break;
 
     default:
       break;
