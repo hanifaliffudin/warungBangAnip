@@ -24,8 +24,16 @@ function initializeApp() {
     document.getElementById('loginText').style.display = "none";
     document.getElementById('login-btn').disabled = true;
   } else {
-    document.querySelector('#sec1').style.display = "none"
+    document.querySelector('main').style.display = "none"
     document.getElementById('logout-btn').style.display = "none";
+  }
+}
+
+function isInClient() {
+  if (liff.isInClient()) {
+    document.querySelector('main').style.display = "block"
+  } else {
+    document.querySelector('main').style.display = "none"
   }
 }
 
