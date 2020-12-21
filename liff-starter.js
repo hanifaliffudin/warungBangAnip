@@ -24,8 +24,8 @@ function initializeApp() {
     document.getElementById('loginText').style.display = "none";
     document.getElementById('login-btn').disabled = true;
   } else {
-    document.querySelector('#namaMakanan').style.display = "none"
-    document.getElementById('logout-btn').disabled = true;
+    document.querySelector('#sec1').style.display = "none"
+    document.getElementById('logout-btn').style.display = "none";
   }
 }
 
