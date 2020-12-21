@@ -1,7 +1,6 @@
 window.onload = function () {
   const liffId = '1655317499-p46en545'
   initializeLiff(liffId);
-  isInClient()
 }
 
 function initializeLiff(myLiffId) {
@@ -25,17 +24,13 @@ function initializeApp() {
     document.getElementById('loginText').style.display = "none";
     document.getElementById('login-btn').disabled = true;
   } else {
-    document.querySelector('main').style.display = "none"
-    document.getElementById('logout-btn').style.display = "none";
+    document.getElementById('logout-btn').disabled = true;
+    document.getElementById('pesan').disabled = true;
+    document.getElementById('tambah').disabled = true;
+    document.querySelector('main').style.display = "none";
   }
 }
 
-function isInClient() {
-  if (!liff.isInClient()) {
-    document.querySelector('main').style.display = "none"
-  }
-
-}
 
 let namaPengguna = ""
 function getProfile() {
