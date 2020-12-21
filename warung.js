@@ -96,14 +96,17 @@ btnPesan.addEventListener('click', function () {
     teksPesanan += `${pesanan.jumlah} ${pesanan.nama}
 `
   })
+  //kalo pake eksternal
   if (!liff.isInClient()) {
     window.alert(`Pesanan anda:
     
 ${teksPesanan}
 Silahkan tunjukkan pesanan ini ke abang anip`)
     localStorage.clear()
-    getPesanan()
-  } else {
+    location.reload()
+  }
+  //kalo in-app LINE
+  else {
     liff.sendMessages([{
       'type': 'text',
       'text': `Hai ${namaPengguna},

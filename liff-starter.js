@@ -25,8 +25,8 @@ function initializeApp() {
     document.querySelector('#login-btn').style.display = "none";
   } else {
     document.querySelector('#logout-btn').style.display = "none";
-    document.querySelector('#pesan').disabled = true;
-    document.querySelector('#tambah').disabled = true;
+    // document.querySelector('#pesan').disabled = true;
+    // document.querySelector('#tambah').disabled = true;
     document.querySelector('main').style.display = "none";
   }
 
