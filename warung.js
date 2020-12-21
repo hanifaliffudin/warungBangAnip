@@ -98,9 +98,11 @@ btnPesan.addEventListener('click', function () {
   })
   if (!liff.isInClient()) {
     window.alert(`Pesanan anda:
-
+    
 ${teksPesanan}
 Silahkan tunjukkan pesanan ini ke abang anip`)
+    localStorage.clear()
+    location.reload()
   } else {
     liff.sendMessages([{
       'type': 'text',
