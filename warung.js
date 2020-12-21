@@ -1,3 +1,4 @@
+//buat jumlah pesanan
 function tambah() {
   document.getElementById('jumlah').stepUp()
 }
@@ -6,14 +7,7 @@ function kurang() {
   document.getElementById('jumlah').stepDown()
 }
 
-function tambah2() {
-  document.getElementById('jumlah2').stepUp()
-}
-
-function kurang2() {
-  document.getElementById('jumlah2').stepDown()
-}
-
+//ngambil element
 const nama = document.querySelector('#namaMakanan');
 const harga = document.querySelector('#harga')
 const jumlah = document.querySelector('#jumlah')
@@ -22,6 +16,7 @@ const btnPesan = document.querySelector('#pesan')
 const listPesanan = document.querySelector('#listPesanan')
 const totpembelian = document.querySelector('#totalPembelian')
 
+//set harga pas dropdown dipilih
 function ubahHarga() {
   const namak = nama.options[nama.selectedIndex].text
   switch (namak) {
@@ -43,6 +38,7 @@ function ubahHarga() {
   }
 }
 
+//tombol tambah diklik
 btnTambah.addEventListener('click', function () {
   const namak = nama.options[nama.selectedIndex].text
   if (namak == "" || jumlah.value == 0) {
@@ -58,6 +54,7 @@ btnTambah.addEventListener('click', function () {
   }
 })
 
+//masukin pesanan ke local storage
 function setLS(data) {
   let cart = JSON.parse(localStorage.getItem("cart"));
   if (cart) {
@@ -70,6 +67,7 @@ function setLS(data) {
   }
 }
 
+//nampilin pesanan
 function getPesanan() {
   let cart = JSON.parse(localStorage.getItem("cart"));
   let htmlPesanan = ""
@@ -103,11 +101,15 @@ btnPesan.addEventListener('click', function () {
   } else {
     liff.sendMessages([{
       'type': 'text',
-      'text': `Pesanan anda adalah sebagai berikut:
+      'text': `Hai ${namaPengguna},
+
+Terima kasih telah memesan, berikut daftar pesanan anda:
+
 ${teksPesanan}
-Terima Kasih`
+Pesanan anda akan segera diproses dan akan diberi tahu jika sudah bisa diambil.
+Mohon ditunggu, terima kasih.`
     }]).then(function () {
-      window.alert('cie dah mesen')
+      window.alert('Silahkan lihat pesanan anda di chat.')
     }).catch(function (error) {
       window.alert('yah gabisa' + error)
     })
