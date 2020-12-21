@@ -95,14 +95,17 @@ btnPesan.addEventListener('click', function () {
   let cart = JSON.parse(localStorage.getItem("cart"));
   let teksPesanan = ""
   cart.forEach((pesanan) => {
-    teksPesanan += `${pesanan.jumlah} ${pesanan.nama}, `
+    teksPesanan += `${pesanan.jumlah} ${pesanan.nama}
+    `
   })
   if (!liff.isInClient()) {
     alertBukaDiBrowserEks()
   } else {
     liff.sendMessages([{
       'type': 'text',
-      'text': teksPesanan
+      'text': `Pesanan anda adalah sebagai berikut: 
+      ${teksPesanan}
+      Terima Kasih`
     }]).then(function () {
       window.alert('cie dah mesen')
     }).catch(function (error) {
