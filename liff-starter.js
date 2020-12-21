@@ -36,7 +36,7 @@ function initializeApp() {
   }
 }
 
-
+//ngamil data profil
 let namaPengguna = ""
 function getProfile() {
   liff.getProfile()

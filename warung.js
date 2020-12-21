@@ -120,10 +120,10 @@ Silahkan tunjukkan pesanan ini ke abang anip`)
       'type': 'text',
       'text': `Hai ${namaPengguna},
 
-Terima kasih telah memesan, berikut daftar pesanan anda:
+Makasih dah mesen, nih daftar pesenannya:
 
 ${teksPesanan}
-Pesanannya lagi dibuat. Sabar ye. Ntar kalo dah jadi dipanggil kok sans. Makasih ye.`
+Pesanannya lagi dibuat. Sabar ye. Ntar kalo dah jadi dipanggil kok sans.`
     }]).then(function () {
       window.alert('Silahkan lihat pesanan anda di chat.')
     }).catch(function (error) {
