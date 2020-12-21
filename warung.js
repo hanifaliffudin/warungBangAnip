@@ -102,6 +102,7 @@ btnPesan.addEventListener('click', function () {
 ${teksPesanan}
 Silahkan tunjukkan pesanan ini ke abang anip`)
     localStorage.clear()
+    getPesanan()
   } else {
     liff.sendMessages([{
       'type': 'text',
