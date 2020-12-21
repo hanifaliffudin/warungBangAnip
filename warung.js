@@ -123,12 +123,11 @@ Silahkan tunjukkan pesanan ini ke abang anip`)
 Terima kasih telah memesan, berikut daftar pesanan anda:
 
 ${teksPesanan}
-Pesanan anda akan segera diproses dan akan diberi tahu jika sudah bisa diambil.
-Mohon ditunggu, terima kasih.`
+Pesanannya lagi dibuat. Sabar ye. Ntar kalo dah jadi dipanggil kok sans. Makasih ye.`
     }]).then(function () {
       window.alert('Silahkan lihat pesanan anda di chat.')
     }).catch(function (error) {
-      window.alert('yah gabisa' + error)
+      window.alert('yah gabisa karena ' + error + '. Coba diulang ya')
     })
     localStorage.clear()
     location.reload()
