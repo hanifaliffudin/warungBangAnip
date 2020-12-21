@@ -1,6 +1,7 @@
 window.onload = function () {
   const liffId = '1655317499-p46en545'
   initializeLiff(liffId);
+  isInClient()
 }
 
 function initializeLiff(myLiffId) {
@@ -30,11 +31,10 @@ function initializeApp() {
 }
 
 function isInClient() {
-  if (liff.isInClient()) {
-    document.querySelector('main').style.display = "block"
-  } else {
+  if (!liff.isInClient()) {
     document.querySelector('main').style.display = "none"
   }
+
 }
 
 let namaPengguna = ""
