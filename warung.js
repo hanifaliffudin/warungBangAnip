@@ -89,13 +89,20 @@ function getPesanan() {
   totpembelian.textContent = totpemb
 }
 
+
+
 btnPesan.addEventListener('click', function () {
+  let cart = JSON.parse(localStorage.getItem("cart"));
+  let teksPesanan = ""
+  cart.forEach((pesanan) => {
+    teksPesanan += `${pesanan.nama} ${pesanan.jumlah} <br>`
+  })
   if (!liff.isInClient()) {
     alertBukaDiBrowserEks()
   } else {
     liff.sendMessages([{
       'type': 'text',
-      'text': "Pesanan berhasil disimpan"
+      'text': teksPesanan
     }]).then(function () {
       window.alert('cie dah mesen')
     }).catch(function (error) {
