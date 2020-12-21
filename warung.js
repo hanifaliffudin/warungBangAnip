@@ -1,3 +1,4 @@
+//buat jumlah
 function tambah() {
   document.getElementById('jumlah').stepUp()
 }
@@ -6,14 +7,7 @@ function kurang() {
   document.getElementById('jumlah').stepDown()
 }
 
-function tambah2() {
-  document.getElementById('jumlah2').stepUp()
-}
-
-function kurang2() {
-  document.getElementById('jumlah2').stepDown()
-}
-
+//ngambil element
 const nama = document.querySelector('#namaMakanan');
 const harga = document.querySelector('#harga')
 const jumlah = document.querySelector('#jumlah')
@@ -22,6 +16,7 @@ const btnPesan = document.querySelector('#pesan')
 const listPesanan = document.querySelector('#listPesanan')
 const totpembelian = document.querySelector('#totalPembelian')
 
+//set harga pas menu dipilih
 function ubahHarga() {
   const namak = nama.options[nama.selectedIndex].text
   switch (namak) {
@@ -43,6 +38,7 @@ function ubahHarga() {
   }
 }
 
+//tombol tambah diklik
 btnTambah.addEventListener('click', function () {
   const namak = nama.options[nama.selectedIndex].text
   if (namak == "" || jumlah.value == 0) {
@@ -58,6 +54,7 @@ btnTambah.addEventListener('click', function () {
   }
 })
 
+//buat local storage
 function setLS(data) {
   let cart = JSON.parse(localStorage.getItem("cart"));
   if (cart) {
@@ -70,6 +67,7 @@ function setLS(data) {
   }
 }
 
+//daftar pesanan, ambil dari local storage
 function getPesanan() {
   let cart = JSON.parse(localStorage.getItem("cart"));
   let htmlPesanan = ""
@@ -89,10 +87,10 @@ function getPesanan() {
   totpembelian.textContent = totpemb
 }
 
-
-
+console.log(setNama())
+//mesen
 btnPesan.addEventListener('click', function () {
-  let nama = getProfile().nama
+  // let nama = getProfile().nama
   let cart = JSON.parse(localStorage.getItem("cart"));
   let teksPesanan = ""
   cart.forEach((pesanan) => {
@@ -104,7 +102,7 @@ btnPesan.addEventListener('click', function () {
   } else {
     liff.sendMessages([{
       'type': 'text',
-      'text': `Hai ${nama}, pesanan anda adalah sebagai berikut:
+      'text': `Hai , pesanan anda adalah sebagai berikut:
 ${teksPesanan}
 Terima Kasih`
     }]).then(function () {

@@ -29,17 +29,19 @@ function initializeApp() {
   }
 }
 
+let namaPengguna = ""
 function getProfile() {
-  let nama = ""
   liff.getProfile()
     .then(profile => {
-      nama = profile.displayName
-      document.getElementById('nama').textContent = nama
+      namaPengguna = profile.displayName
+      document.getElementById('nama').textContent = namaPengguna
+      setNama(nama)
     })
     .catch((err) => {
       console.log('error', err);
     })
 }
+
 
 document.getElementById('login-btn').addEventListener('click', function () {
   if (!liff.isLoggedIn()) {
