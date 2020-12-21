@@ -95,7 +95,7 @@ btnPesan.addEventListener('click', function () {
   let cart = JSON.parse(localStorage.getItem("cart"));
   let teksPesanan = ""
   cart.forEach((pesanan) => {
-    teksPesanan += `${pesanan.nama} ${pesanan.jumlah} <br>`
+    teksPesanan += `${pesanan.jumlah} ${pesanan.nama}, `
   })
   if (!liff.isInClient()) {
     alertBukaDiBrowserEks()
@@ -108,7 +108,7 @@ btnPesan.addEventListener('click', function () {
     }).catch(function (error) {
       window.alert('yah gabisa' + error)
     })
-    localStorage.clear()
-    location.reload()
+    // localStorage.clear()
+    // location.reload()
   }
 })
